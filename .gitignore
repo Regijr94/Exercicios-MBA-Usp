@@ -1,0 +1,115 @@
+# Arquivo .gitignore para projetos R
+
+# Arquivos de Histórico
+.Rhistory
+.Rapp.history
+
+# Arquivos de Workspace (salva o ambiente da sessão R)
+.RData
+.RDataTmp
+
+# Arquivos e pastas específicos do RStudio
+.Rproj.user/          # Pasta de metadados do projeto RStudio, específica do usuário
+!*.Rproj             # NÃO ignore o arquivo .Rproj principal do projeto
+rsconnect/            # Para publicações no RStudio Connect / shinyapps.io
+
+# Arquivos de Ambiente do R (podem conter chaves de API ou senhas)
+.Renviron
+
+# Arquivos de pacotes gerados (se você estiver desenvolvendo um pacote)
+# Descomente se aplicável
+# *.tar.gz
+# *.Rcheck/
+# src/*.o
+# src/*.so
+# src/*.dll
+# src/RcppExports.cpp
+# RcppExports.R
+# TAGS
+
+# Gerenciamento de dependências com renv ou packrat
+# O arquivo de lock (renv.lock ou packrat.lock) DEVE ser versionado.
+# A biblioteca local de pacotes NÃO deve ser versionada.
+renv/library/
+renv/staging/
+# renv/activate.R      # Pode ser regenerado, mas alguns preferem versionar. Outros ignoram.
+# renv/settings.dcf    # Configurações do renv, geralmente versionado.
+packrat/lib/
+packrat/lib-R/
+packrat/lib-ext/
+packrat/lib-src/
+# packrat/packrat.lock # O lockfile do packrat DEVE ser versionado.
+# packrat/packrat.opts # Opções do packrat, geralmente versionado.
+
+# Saídas comuns de R Markdown e outros arquivos gerados
+# Adicione aqui os tipos de arquivos de saída que você gera e não quer versionar.
+# Se um relatório específico é uma entrega final, você pode querer versioná-lo explicitamente
+# ou usar uma regra de exceção (ex: !meu_relatorio_final.html).
+# Geral:
+*.html
+*.pdf
+*.docx
+# Gráficos comuns (a menos que sejam parte de um relatório final a ser versionado):
+*.png
+*.jpg
+*.jpeg
+*.gif
+# Arquivos de log e auxiliares de compilação (ex: LaTeX)
+*.log
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+# Backups de editores
+*~
+*#
+.#*
+
+# Pastas de cache (ex: knitr cache)
+*_cache/
+/cache/      # Cache na raiz do projeto
+cache*/      # Para pastas de cache como cache_html, cache_R, etc.
+__MACOSX # Pasta criada ao descompactar zips no macOS
+
+# Dados
+# É uma BOA PRÁTICA não versionar arquivos de dados grandes ou sensíveis.
+# Use Git LFS para arquivos grandes, ou armazene-os fora do repositório
+# e inclua um script ou instruções para baixá-los.
+# Adicione os nomes dos seus arquivos de dados ou pastas aqui se não devem ser versionados.
+# Exemplos:
+# data/raw_data.csv
+# data/large_dataset.RData
+# *.sqlite
+# *.db
+# output/data/ # Uma pasta comum para dados processados que não precisam ser versionados
+
+# Arquivos específicos do sistema operacional
+.DS_Store             # macOS
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db           # Windows
+Thumbs.db             # Windows
+
+# Arquivos específicos de IDEs (além do RStudio)
+.vscode/              # Configurações do VSCode, exceto as que você quer compartilhar
+# !.vscode/settings.json # Exemplo de como NÃO ignorar um arquivo específico do vscode
+# !.vscode/launch.json
+# !.vscode/extensions.json
+.idea/                # Configurações do IntelliJ / PyCharm etc.
+
+# Arquivos temporários do Microsoft Office (gerados quando um arquivo está aberto)
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Outros arquivos temporários ou de log
+*.tmp
+*.swp               # Arquivos swap do Vim (geralmente desnecessário se o editor estiver bem configurado)
+
+# Se você usa Shiny, pode querer ignorar logs ou dados temporários do app
+# shinyapps-logs/
+# shinystan_cache/
